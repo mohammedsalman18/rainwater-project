@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+.navbar-brand {
+  text-decoration: none; /* Remove underline from the entire link */
+  color: #000; /* Main text color */
+  font-weight: 800; /* Bold font for the link */
+  text-transform: uppercase;
+}
+
+.border-red {
+  color: rgba(0, 0, 0, 0.9); /* Red color for "New" text */
+  position: relative; /* Position for the pseudo-element underline */
+  padding-right: 0.5rem; /* Adjust spacing as needed */
+}
+
+.border-red::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #cb1717;
+}
+
+/* General Navbar Styling */
+.navbar {
+  background-color: transparent;
+  justify-content: center;
+  text-align: center; /* Background color for the navbar */
+  padding: 1rem; /* Padding around the navbar */
+}
+
+.navbar-list {
+  display: flex; /* Horizontal layout for the list items */
+  list-style: none; /* Remove default list styling */
+  margin-top: -15; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar-list li {
+  margin-right: 2rem; /* Space between navbar items */
+}
+
+.navbar-link {
+  color: rgba(0, 0, 0, 0.9); /* Text color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1rem; /* Font size */
+  position: relative; /* Position for the pseudo-element effect */
+  padding: 0.5rem 0; /* Vertical padding for link area */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover and After Effects */
+.navbar-link:hover {
+  color: rgba(0, 0, 0, 0.9); /* Change color on hover */
+}
+
+.navbar-link.has-after::after {
+  content: ""; /* Pseudo-element for the underline */
+  position: absolute;
+  bottom: 0; /* Position at the bottom of the link */
+  left: 0;
+  width: 100%; /* Full width underline */
+  height: 2px; /* Height of the underline */
+  background-color: rgba(0, 0, 0, 0.9); /* Color of the underline */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.navbar-link.has-after:hover::after {
+  transform: scaleX(1); /* Show underline on hover */
+}
+
+/* Style for cancel button */
+.btn-secondary {
+  background-color: #f8f9fa;
+  border-color: #ddd;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e6ea;
+  border-color: #ccc;
+}
+
+.header,
+.cart-sidebar {
+  padding: 15px;
+}
+
+.container {
+  margin: 30px auto;
+}
+
+.product-item {
+  min-height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+/* Basic styling for cart sidebar and overlay */
+#cart-sidebar {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1001;
+}
+
+#cart-sidebar.active {
+  right: 0;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+
+#overlay.active {
+  display: block;
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #003f3f;
+  color: #fff;
+  padding: 40px 20px;
+}
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #f2f2f2;
+}
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color: #ccc;
+}
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #f2f2f2;
+  font-size: 18px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-section {
+    margin: 10px 0;
+  }
+}

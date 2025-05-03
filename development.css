@@ -1,0 +1,466 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f3f3f3;
+  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+  overflow: hidden; /* Prevent horizontal scrollbar */
+}
+
+.logo {
+  order: 1;
+  font-size: 2.3rem;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.navbar a {
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #117964;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+      display: block;
+  }
+
+  .navbar-container {
+      display: block;
+      position: relative;
+      height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+      position: absolute;
+      display: block;
+      height: 32px;
+      width: 30px;
+      top: 20px;
+      left: 20px;
+      z-index: 5;
+      opacity: 0;
+      cursor: pointer;
+  }
+
+  .navbar-container .hamburger-lines {
+      display: block;
+      height: 28px;
+      width: 35px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 10px;
+      background: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+      transform-origin: 0% 0%;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+      transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+      transform-origin: 0% 100%;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar .menu-items {
+      padding-top: 100px;
+      background: #fff;
+      height: 100vh;
+      max-width: 300px;
+      transform: translate(-150%);
+      display: flex;
+      flex-direction: column;
+      margin-left: -40px;
+      padding-left: 40px;
+      transition: transform 0.5s ease-in-out;
+      box-shadow: 5px 0px 10px 0px #aaa;
+      overflow: hidden; /* Prevent horizontal scrollbar */
+  }
+
+  .navbar .menu-items li {
+      margin-bottom: 1.8rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+  }
+
+  .logo {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 2.5rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+      transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+      transform: rotate(45deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+      transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+      transform: rotate(-45deg);
+  }
+
+  ul.menu-items {
+      width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar-container input[type="checkbox"]:checked ~ .logo {
+      display: none;
+  }
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background: #fff;
+  color: #005b5b;
+}
+
+.header-content {
+  max-width: 50%;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+}
+
+.header-content p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.header-image img {
+  max-width: 100%; /* Ensure the image scales within its container */
+  height: 350px; /* Fixed height for consistent layout */
+  border-radius: 10px; /* Add rounded corners */
+  object-fit: cover; /* Ensure the image covers the space nicely */
+  display: block; /* Remove extra space below the image */
+  margin: auto; /* Center the image if it's inside a container */
+  margin-right: 30px; /* Add 30px space from the right side */
+}
+
+
+/* Second Section */
+.second-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #f0f8f8; /* Soft background color */
+  color: #005b5b;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  gap: 2rem; /* Add spacing between content and image */
+}
+
+.section-image img {
+  max-width: 500px; /* Fix the maximum width of the image */
+  height: auto; /* Maintain the image aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  object-fit: cover; /* Fill the container while maintaining aspect ratio */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-left: 30px; /* Add spacing to the left of the image */
+}
+
+.section-content {
+  max-width: 50%; /* Limit content width */
+  flex: 1; /* Allow content to take up space */
+}
+
+.section-content h2 {
+  font-size: 2.5rem; /* Larger heading */
+  margin-bottom: 1rem; /* Add spacing below the heading */
+  line-height: 1.4; /* Improve readability */
+}
+
+.section-content p {
+  font-size: 1.1rem; /* Slightly larger for better readability */
+  margin-top: 1rem;
+  color: #333; /* Subtle text color for better readability */
+  line-height: 1.6; /* Improve text spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .second-section {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      text-align: center; /* Center align text for better layout */
+  }
+
+  .section-content {
+      max-width: 100%; /* Allow content to span full width */
+  }
+
+  .section-image img {
+      margin-left: 0; /* Remove left margin on smaller screens */
+      max-width: 90%; /* Restrict image width for smaller screens */
+  }
+}
+
+
+/* Third Section */
+.third-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #f8f9fa; /* Light background for a clean appearance */
+  color: #003b3b; /* Darker text color for good contrast */
+  flex-wrap: wrap; /* Enable wrapping for better responsiveness */
+  gap: 2rem; /* Add spacing between elements */
+}
+
+.third-section .section-image img {
+  max-width: 400px; /* Set a fixed maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  object-fit: cover; /* Ensure the image covers its space nicely */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.third-section .section-content {
+  max-width: 50%; /* Limit the width of the content */
+  flex: 1; /* Allow flexible space allocation */
+}
+
+.third-section .section-content h2 {
+  font-size: 2.5rem; /* Larger heading for emphasis */
+  margin-bottom: 1rem; /* Add spacing below the heading */
+  line-height: 1.4; /* Improve readability */
+}
+
+.third-section .section-content p {
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+  color: #333; /* Neutral text color for better contrast */
+  line-height: 1.6; /* Adjust line spacing for clarity */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .third-section {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+      text-align: center; /* Center-align text for better layout */
+  }
+
+  .third-section .section-content {
+      max-width: 100%; /* Allow content to span full width */
+  }
+
+  .third-section .section-image img {
+      max-width: 90%; /* Restrict image width for smaller screens */
+      margin: 0 auto; /* Center image */
+  }
+}
+
+/* Card Section */
+.card-section {
+  height: 400px;
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.card-section h2 {
+  margin-top: 30px;
+  font-size: 36px;
+  color: #005b5b;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-right: 70px;
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #005b5b;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-section,
+  .second-section,
+  .third-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .header-content, .section-content {
+      max-width: 100%;
+  }
+
+  .header-image img,
+  .section-image img {
+      max-width: 100%;
+  }
+
+  .cards {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #003f3f;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #f2f2f2;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #ccc;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #f2f2f2;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-section {
+      margin: 10px 0;
+  }
+}

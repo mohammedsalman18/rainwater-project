@@ -1,0 +1,200 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" href="shop.css" />
+<title>Shop</title>
+<link rel="icon" href="logo.png" type="logo/png">
+
+<!-- Navbar Section -->
+<nav class="navbar">
+  <div class="navbar-container container">
+      <input type="checkbox" name="" id="">
+      <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+          <li><a href="Residentialarea.html">Residential</a></li>
+          <li><a href="Shop Page.html">Shop</a></li>
+          <li><a href="facts.html">Facts</a></li>
+          <li><a href="Development.html">Development</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+      </ul>
+
+      <h1 class="logo">Rainwater</h1>
+  </div>
+</nav>
+
+<!-- Slider -->
+<div style="background-color: #003f3f; height: 350px; color: white; font-weight: 600; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  <h1 style="font-weight: 800;">PRODUCTS</h1>
+  <h1 style="font-weight: 800; margin-top: 10px;">BIG SALE</h1>
+  <p style="margin-top: 20px; font-size: 16px;">"Save Every Drop, Secure the Future – Rainwater Harvesting Made Easy!"</p>
+  <p style="margin-top: 10px; font-size: 14px; max-width: 600px;">
+    Discover our wide range of rainwater harvesting products designed to make water conservation simple and efficient. Let's work together for a sustainable future!
+  </p>
+  <button onclick="navigateToProducts()" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: white; color: #003f3f; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    SHOP NOW
+  </button>
+</div>
+
+      <nav class="navbar navbar-light bg-light" style="margin-top: 25px;">
+        <a class="navbar-brand" href="#">Shop</a>
+        <button class="btn btn-outline-secondary" onclick="toggleCartSidebar()">
+            Cart <span id="cart-count" class="badge bg-dark">0</span>
+        </button>
+    </nav>
+
+  
+  <!-- Cart Sidebar -->
+<div id="cart-sidebar">
+  <h4>Shopping Cart</h4>
+  <ul id="cart-items" class="list-group mb-3">
+    <!-- Cart items will be dynamically added here -->
+  </ul>
+  <div class="d-flex justify-content-between">
+    <strong>Total:</strong>
+    <span id="cart-total" class="text-success">$0.00</span>
+  </div>
+  <div class="d-flex justify-content-between mt-3">
+    <button class="btn btn-primary w-50" onclick="checkout()" st>Checkout</button>
+    <button class="btn btn-secondary w-50" onclick="closeCartSidebar()">Close</button>
+  </div>
+</div>
+
+<div class="container">
+<!-- Overlay for sidebar -->
+<div id="overlay" onclick="toggleCartSidebar()"></div>
+
+<nav class="linebar linebar-expand-md linebar-light bg-white">
+    <div class="container-fluid p-0">
+      <a class="linebar-brand text-uppercase fw-800" href="#"
+        ><span class="border-red pe-2">New</span>Product</a
+      >
+    </div>
+</nav>
+
+<div class="row">
+    <!-- Products Are Placed Here-->
+
+    <!-- Product 01 -->
+    <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+      <div class="product"><img src="product1.png" alt="" /></div>
+      <div class="title pt-4 pb-1">Diverter</div>
+      <button class="btn btn-dark" onclick="addToCart('Diverter', 39.99)">Add to Cart</button>
+      <div class="price">$ 39.99</div>
+    </div>
+
+    <!-- Product 02 -->
+    <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+      <div class="product"><img src="product2.jpg" alt="" /></div>
+      <div class="title pt-4 pb-1">Filteration</div>
+      <button class="btn btn-dark" onclick="addToCart('Filteration', 69.99)">Add to Cart</button>
+      <div class="price">$ 69.99</div>
+    </div>
+
+    <!-- Product 03 -->
+    <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+      <div class="product"><img src="product4.jfif" alt="" /></div>
+      <div class="title pt-4 pb-1">Gutter Downpipe</div>
+      <button class="btn btn-dark" onclick="addToCart('Gutter Downpipe', 19.99)">Add to Cart</button>
+      <div class="price">$ 19.99</div>
+    </div>
+
+    <!-- Product 04 -->
+    <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+      <div class="product"><img src="product3.jpg" alt="" /></div>
+      <div class="title pt-4 pb-1">Overflow Value</div>
+      <button class="btn btn-dark" onclick="addToCart('Overflow Value', 39.99)">Add to Cart</button>
+      <div class="price">$ 39.99</div>
+    </div>
+
+</div>       <!-- fisrt row closed here -->
+
+<div class="row">
+  <!-- Product 05 -->
+  <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+    <div class="product"><img src="product5.jpg" alt="" /></div>
+    <div class="title pt-4 pb-1">Homestream</div>
+    <button class="btn btn-dark" onclick="addToCart('Homestream', 89.99)">Add to Cart</button>
+    <div class="price">$ 89.99</div>
+  </div>
+
+  <!-- Product 06 -->
+  <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+    <div class="product"><img src="product6.jpg" alt="" /></div>
+    <div class="title pt-4 pb-1">Rain Barrels</div>
+    <button class="btn btn-dark" onclick="addToCart('rain Barrels', 99.99)">Add to Cart</button>
+    <div class="price">$ 99.99</div>
+  </div>
+
+  <!-- Product 07 -->
+  <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+    <div class="product"><img src="product7.jpg" alt="" /></div>
+    <div class="title pt-4 pb-1">Water Pump</div>
+    <button class="btn btn-dark" onclick="addToCart('Waterpump', 19.99)">Add to Cart</button>
+    <div class="price">$ 19.99</div>
+  </div>
+
+  <!-- Product 08 -->
+  <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+    <div class="product"><img src="rooftop rainwater.png" alt="" /></div>
+    <div class="title pt-4 pb-1">Rooftop Rainwater</div>
+    <button class="btn btn-dark"onclick="addToCart('Rooftop Rainwater', 49.99)">Add to Cart</button>
+    <div class="price">$ 49.99</div>
+  </div>
+
+</div>  
+</div>     <!-- Second row closed here -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <!-- Logo Section -->
+      <div class="footer-section footer-logo">
+        <img src="logowhite.png" alt="Logo">
+      </div>
+  
+      <!-- Pages Links Section -->
+      <div class="footer-section">
+        <h3 style="font-weight: 800;">Pages</h3>
+        <a href="#home">Home</a><br>
+        <a href="#residential">Residential</a><br>
+        <a href="commercial.html">Commerical</a><br>
+        <a href="Shop Page.html">Shop</a><br>
+        <a href="facts.html">Facts</a><br>
+        <a href="#development">Development</a><br>
+        <a href="about.html">About</a><br>
+        <a href="Contact.html">Contact</a>
+      </div>
+  
+      <!-- About Us Section -->
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are a company dedicated to providing excellent services. Our mission is to bring quality and satisfaction to our customers. Learn more about our journey and values.</p>
+      </div>
+  
+      <!-- Social Links Section -->
+      <div class="footer-section social-icons">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/groups/335128489907993/" target="_blank">Facebook</a><br>
+        <a href="https://www.instagram.com/rainwaterharvestingltd/" target="_blank">Instagram</a><br>
+        <a href="https://www.linkedin.com/pulse/rainwater-harvesting-explained-chris-graber-mrkvc" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="script.js"></script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
