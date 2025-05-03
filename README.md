@@ -30,7 +30,7 @@ This website was created as part of an educational project to showcase the impor
 
 ## 🔗 Live Preview
 
-[Click here to view the project](https://yourusername.github.io/rainwater-harvesting/)
+[Click here to view the project](https://mohammedsalman18.github.io/rainwater-harvesting/)
 
 ## 👤 Developed By
 
